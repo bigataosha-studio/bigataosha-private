@@ -171,11 +171,11 @@ public final class Bigataosha extends JavaPlugin {
         Catcher = new ArrayList<>();
         //指令绑定
         Objects.requireNonNull(Bukkit.getPluginCommand("startinggame")).setExecutor(new commands());
-        Objects.requireNonNull(Bukkit.getPluginCommand("setPlayerSpawn")).setExecutor(new com.abuke.bigataosha.com_setPlayerSpawn());
+        Objects.requireNonNull(Bukkit.getPluginCommand("setPlayerSpawn")).setExecutor(new com.abuke.bigataosha.com.com_setPlayerSpawn());
         Objects.requireNonNull(Bukkit.getPluginCommand("stopgame")).setExecutor(new com.abuke.bigataosha.com.com_stopgame());
         Objects.requireNonNull(Bukkit.getPluginCommand("returnConfig")).setExecutor(new com.abuke.bigataosha.com.com_returnConfig());
         Objects.requireNonNull(Bukkit.getPluginCommand("startdebugger")).setExecutor(new com.abuke.bigataosha.com_ifDebugger());
-        Objects.requireNonNull(Bukkit.getPluginCommand("setWorldSpawn")).setExecutor(new com.abuke.bigataosha.com_setWorldSpawn());
+        Objects.requireNonNull(Bukkit.getPluginCommand("setWorldSpawn")).setExecutor(new com.abuke.bigataosha.com.com_setWorldSpawn());
         Objects.requireNonNull(Bukkit.getPluginCommand("setConfig")).setExecutor(new com.abuke.bigataosha.com.com_setConfig());
         Objects.requireNonNull(Bukkit.getPluginCommand("cd")).setExecutor(new com.abuke.bigataosha.com.com_cd());
         Objects.requireNonNull(Bukkit.getPluginCommand("setCalled")).setExecutor(new com.abuke.bigataosha.com.com_setCalled());

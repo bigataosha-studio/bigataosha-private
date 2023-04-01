@@ -16,7 +16,7 @@ public class com_cd implements @Nullable CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if(ifGameStart){
             commandSender.sendMessage("§4游戏已经开始,你不能打开菜单了");
-            return false;
+            return true;
         }
         try {
             openGUI((Player) commandSender);

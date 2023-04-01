@@ -1,4 +1,4 @@
-package com.abuke.bigataosha;
+package com.abuke.bigataosha.com;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

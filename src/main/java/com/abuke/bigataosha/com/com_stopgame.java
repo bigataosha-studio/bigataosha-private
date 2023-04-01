@@ -13,7 +13,7 @@ public class com_stopgame implements @Nullable CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if(!ifGameStart){
             commandSender.sendMessage("游戏未开始");
-            return false;
+            return true;
         }
         LastMinute = 0;
         CauseReturn = "强制结束游戏";
