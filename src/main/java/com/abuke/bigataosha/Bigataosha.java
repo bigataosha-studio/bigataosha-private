@@ -99,13 +99,13 @@ public final class Bigataosha extends JavaPlugin {
         return a.getScores() > b.getScores();
     }
     public static List<PlayerCalled> PlayerCalledList = new ArrayList<>();
-    public static List<PlayerScores> paihang;
-    public static List<BlockData> BrokenDoors;
-    public static List<Player> VIPs = null;
-    public static List<Player> VIPPROs = null;
-    public static List<Player> VIPULTRAs = null;
-    public static List<Player> OPs = null;
-    public static List<Player> PLUGINMAKERs = null;
+    public static List<PlayerScores> paihang = new ArrayList<>();
+    public static List<BlockData> BrokenDoors = new ArrayList<>();
+    public static List<Player> VIPs = new ArrayList<>();
+    public static List<Player> VIPPROs = new ArrayList<>();
+    public static List<Player> VIPULTRAs = new ArrayList<>();
+    public static List<Player> OPs = new ArrayList<>();
+    public static List<Player> PLUGINMAKERs = new ArrayList<>();
     public static Team teamred = null;
     public static Team teamblue = null;
     public static Team showTeam = null;
