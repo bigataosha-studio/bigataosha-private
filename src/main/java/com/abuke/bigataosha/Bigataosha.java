@@ -324,30 +324,8 @@ public final class Bigataosha extends JavaPlugin {
     }
     // 更新计分板的内容和显示
     public static void updateScoreboard() {
-        // 对每个在线玩家执行以下操作
-
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            Objective objective;
-            Date date = new Date();
-            objective = scoreboard.registerNewObjective(save3(player.getName())+ date.hashCode(), "dummy","§m§l§4" + String_GameName);
-            Score line2_3 = objective.getScore("§l§e欢迎来到子洋追杀！");
-            line2_3.setScore(-1);
-            // 获取第三行的得分对象，并设置得分为-2（不影响显示）
-            Score line3 = objective.getScore("§6" + String_Message_SystemMsg_LatestTime + "：");
-            line3.setScore(-2);
-            showTeam.addEntry("§6" + String_Message_SystemMsg_LatestTime + "：");
-            showTeam.setSuffix(format0p2(LastMinute));
-            Score TPs = objective.getScore("§a服务器TPS：");
-            TPS.addEntry("§a服务器TPS：");
-            TPS.setSuffix(format0p2(server.getTPS()[0]));
-            TPs.setScore(-3);
-            Score line5 = objective.getScore("§4" + String_Message_Default_haveagoodtime);
-            line5.setScore(-4);
-            objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-            //System.out.println(String_Message_Default_to + player.getName() + String_Message_ScoreBoard_SendBoardSuccessfully);
-            // 将计分板推送给玩家
-            player.setScoreboard(scoreboard);
-        }
+        TPS.setSuffix(format0p2(server.getTPS()[0]));
+        showTeam.setSuffix(format0p2(LastMinute));
     }
     public static void updateBossBar(){
         int i = 0;
@@ -361,6 +339,27 @@ public final class Bigataosha extends JavaPlugin {
         showTeam = scoreboard.registerNewTeam("showTeam");
         HealthShow = scoreboard.registerNewTeam("HealthyTeam");
         TPS = scoreboard.registerNewTeam("TPSTeam");
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            Objective objective;
+            Date date = new Date();
+            objective = scoreboard.registerNewObjective(save3(player.getName())+ date.hashCode(), "dummy","§m§l§4" + String_GameName);
+            Score line2_3 = objective.getScore("§l§e欢迎来到子洋追杀！");
+            line2_3.setScore(-1);
+            // 获取第三行的得分对象，并设置得分为-2（不影响显示）
+            Score line3 = objective.getScore("§6" + String_Message_SystemMsg_LatestTime + "：");
+            line3.setScore(-2);
+            showTeam.addEntry("§6" + String_Message_SystemMsg_LatestTime + "：");
+            Score TPs = objective.getScore("§a服务器TPS：");
+            TPS.addEntry("§a服务器TPS：");
+            TPS.setSuffix(format0p2(server.getTPS()[0]));
+            TPs.setScore(-3);
+            Score line5 = objective.getScore("§4" + String_Message_Default_haveagoodtime);
+            line5.setScore(-4);
+            objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+            //System.out.println(String_Message_Default_to + player.getName() + String_Message_ScoreBoard_SendBoardSuccessfully);
+            // 将计分板推送给玩家
+            player.setScoreboard(scoreboard);
+        }
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
 
             @Override
