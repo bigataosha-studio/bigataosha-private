@@ -186,23 +186,28 @@ public final class Bigataosha extends JavaPlugin {
         OPs_String = pluginMain.getConfig().getStringList("CalledOP");
         PLUGINMAKERs_String = pluginMain.getConfig().getStringList("CalledPLUGINMAKER");
         for(String obj : VIPs_String){
-            VIPs.add(Bukkit.getPlayer(obj));
+            if(obj != null)
+                VIPs.add(Bukkit.getPlayer(obj));
         }
         for(String obj : VIPPROs_String)
         {
-            VIPPROs.add(Bukkit.getPlayer(obj));
+            if(obj != null)
+                VIPPROs.add(Bukkit.getPlayer(obj));
         }
         for(String obj : VIPULTRAs_String)
         {
-            VIPULTRAs.add(Bukkit.getPlayer(obj));
+            if(obj != null)
+                VIPULTRAs.add(Bukkit.getPlayer(obj));
         }
         for(String obj : OPs_String)
         {
-            OPs.add(Bukkit.getPlayer(obj));
+            if(obj != null)
+                OPs.add(Bukkit.getPlayer(obj));
         }
         for(String obj : PLUGINMAKERs_String)
         {
-            PLUGINMAKERs.add(Bukkit.getPlayer(obj));
+            if(obj != null)
+                PLUGINMAKERs.add(Bukkit.getPlayer(obj));
         }
         //绑定监听器
         Bukkit.getPluginManager().registerEvents(new com.abuke.bigataosha.MyListener(), this);
@@ -266,19 +271,24 @@ public final class Bigataosha extends JavaPlugin {
         Objects.requireNonNull(server.getWorld("world")).setGameRule(GameRule.DISABLE_ELYTRA_MOVEMENT_CHECK, true);
         //玩家称号
         for(Player obj : VIPs){
-            VIP.addEntry(obj.getName());
+            if(obj != null)
+                VIP.addEntry(obj.getName());
         }
         for(Player obj : VIPPROs){
-            VIPPRO.addEntry(obj.getName());
+            if(obj != null)
+                VIPPRO.addEntry(obj.getName());
         }
         for(Player obj : VIPULTRAs){
-            VIPULTRA.addEntry(obj.getName());
+            if(obj != null)
+                VIPULTRA.addEntry(obj.getName());
         }
         for(Player obj : OPs){
-            OP.addEntry(obj.getName());
+            if(obj != null)
+                OP.addEntry(obj.getName());
         }
         for(Player obj : PLUGINMAKERs){
-            PLUGINMAKER.addEntry(obj.getName());
+            if(obj != null)
+                PLUGINMAKER.addEntry(obj.getName());
         }
     }
     @Override
