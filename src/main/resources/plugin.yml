@@ -1,0 +1,46 @@
+name: bigataosha
+version: '${project.version}'
+main: com.abuke.bigataosha.Bigataosha
+api-version: 1.17
+
+# This is the list of commands that your plugin will register.
+# You can also register commands in your plugin's Java code.
+# See the JavaPlugin class for more information.
+
+commands:
+  startinggame:
+    aliases: startgame
+    description: 开始游戏
+    usage: /<command>
+  setPlayerSpawn:
+    aliases: sPS
+    description: 设置游戏开始时玩家的出生点
+    usage: /<command> x y z
+  stopgame:
+    aliases: sg
+    description: 强制结束游戏
+    usage: /<command>
+  returnConfig:
+    aliases: rC
+    description: 返回插件目前所有设置信息
+    usage: /<command>
+  startDebugger:
+    aliases: sD
+    description: 开启调试模式
+    usage: /<command>
+  setWorldSpawn:
+    aliases: sWS
+    description: 设置默认出生点
+    usage: /<command> x y z
+  setConfig:
+    aliases: sC
+    description: 设置变量
+    usage: /<command> key value
+  cd :
+    aliases: cd
+    description: 打开菜单
+    usage: /<command>
+  setCalled:
+    aliases: sCalled
+    description: 设置称号
+    usage: /<command> called [player]

@@ -1,0 +1,26 @@
+name: bigataosha
+version: '1.0-SNAPSHOT'
+main: com.abuke.bigataosha.Bigataosha
+api-version: 1.17
+commands:
+  startinggame:
+    aliases: startgame
+    description: 开始游戏
+    usage: /<command>
+  setPlayerSpawn:
+    aliases: sPS
+    description: 设置游戏开始时玩家的出生点
+    usage: /<command> x y z
+  stopgame:
+    aliases: sg
+    description: 强制结束游戏
+    usage: /<command>
+  returnConfig:
+    aliases: rC
+    description: 返回插件目前所有设置信息
+    usage: /<command>
+  startDebugger:
+    aliases: sD
+    description: 开启调试模式
+    usage: /<command>
+

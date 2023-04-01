@@ -1,0 +1,123 @@
+#这是插件的配置文件
+
+#玩家出生点
+Player_Spawn_x : 0
+Player_Spawn_y : 0
+Player_Spawn_z : 0
+
+#世界出生点
+World_Spawn_x : 0
+World_Spawn_y : 0
+World_Spawn_z : 0
+
+#游戏区域
+Game_Area_x1 : 0
+Game_Area_y1 : 0
+Game_Area_z1 : 0
+Game_Area_x2 : 0
+Game_Area_y2 : 0
+Game_Area_z2 : 0
+
+#老师出生点
+Teacher_Spawn_x : 0
+Teacher_Spawn_y : 0
+Teacher_Spawn_z : 0
+
+#是否是调试模式
+IsDebugger : false
+
+#称号
+VIP : "§1[VIP]"
+VIPPRO : "§6[VIP+]"
+VIPULTRA : "§5[VIP++]"
+OP : "§l§5[至高无上的管理员]"
+PLUGINMAKER : "§l§6[至高无上的插件作者]"
+
+#玩家称号保存
+PlayerCalled :
+    - Abuke : "PLUGINMAKER"
+    - chanty : "OP"
+    - pengzhangdelaoxu : "VIPULTRA"
+    - yzk1018 : "VIPULTRA"
+
+#称号保存
+CalledVIP:
+    - ""
+CalledVIPPRO:
+    - ""
+CalledVIPULTRA:
+    - ""
+CalledOP:
+    - "chenxy"
+CalledPLUGINMAKER:
+    - "Abuke"
+    - "czg303"
+#排行
+PlayerList :
+    - Abuke : "Abuke"
+PlayerScore :
+    - Abuke : 0
+#语言文件
+
+#String类
+
+String_GameName : "子洋逃杀"
+String_PluginStart : "BIGAKILL启动了"
+String_PluginShutdown : "BIGAKILL卸载了"
+
+#----Message类 String_Message_*
+
+#--------Command类 String_Message_Command_*
+String_Message_Command_Tp : "传送"
+String_Message_Command_ErrorValue : "没有对应的参数值"
+#--------Command类_end
+
+#--------Default类 String_Message_Default_*
+String_Message_Default_win : "赢了"
+String_Message_Default_to : "向"
+String_Message_Default_welcome : "欢迎来到"
+String_Message_Default_haveagoodtime : "祝您游戏愉快"
+String_Message_Default_Mr_Miss_ : "尊敬的"
+String_Message_Default_Successfully : "成功地"
+String_Message_Default_Already : "已经"
+String_Message_Default_YouAre : "你是"
+String_Message_Default_ServerTPS : "服务器TPS"
+#--------Default类_end
+
+#--------ScoreBoard类 String_Message_ScoreBoard_*
+String_Message_ScoreBoard_BoardTitle : "欢迎来到子洋逃杀"
+String_Message_ScoreBoard_LoadSuccessfully : "计分板初始化成功"
+String_Message_ScoreBoard_SendBoardSuccessfully : "推送了计分板"
+#--------ScoreBoard类_end
+
+#--------SystemMsg类 String_Message_SystemMsg_*
+String_Message_SystemMsg_LatestTime : "剩余时间"
+#--------SystemMsg类_end
+
+#----Message类_end
+
+#----Name类 String_Name。*
+String_Name_Catcher : "子洋"
+String_Name_Runner : "逃脱者"
+#----Name类_end
+
+#----Item类 String_Item_*
+String_Item_SpeedPlusApple : "加速金苹果"
+String_Item_SpeedPlusApple_Description : "吃了这个苹果就能加速"
+String_Item_Booger : "鼻嘎"
+String_Item_Booger_Description : "把它扔出去会怎样呢？"
+String_Item_CrossBow : "弩（一次性）"
+String_Item_CrossBow_Description : "这是一把能用来攻击子洋的弩"
+String_Item_BoogerWater : "鼻嘎水"
+String_Item_BoogerWater_Description : "这是一瓶能用来清洁鼻嘎的水(这是copilot写的，确信，哈哈哈哈哈）"
+String_Item_FoundItem : "追踪器"
+String_Item_FoundItem_Description : "这是一把能用来追踪子洋的追踪器(这也是copilot写的，哈哈哈哈哈）"
+String_Item_Key : "钥匙"
+String_Item_Key_Description : "这是一把能用来锁门的钥匙"
+String_Item_HealthyWater : "健康水"
+String_Item_HealthyWater_Description : "这是一瓶能用来恢复健康的水"
+String_Item_HomeWork : "作业"
+String_Item_HomeWork_Description : "这是一份作业，你可以用它来让学生快乐（确信）地写作业"
+#----Item类_end
+
+#String类_end
