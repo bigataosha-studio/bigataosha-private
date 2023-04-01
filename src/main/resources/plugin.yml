@@ -44,3 +44,7 @@ commands:
     aliases: sCalled
     description: 设置称号
     usage: /<command> called [player]
+  startgameauto:
+    aliases: sga
+    description: 自动开始游戏
+    usage: /<command>

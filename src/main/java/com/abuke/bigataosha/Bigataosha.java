@@ -95,6 +95,7 @@ public final class Bigataosha extends JavaPlugin {
             return this.player;
         }
     }
+    public static boolean startgameauto = false;
     public boolean cmp(PlayerScores a, PlayerScores b){
         return a.getScores() > b.getScores();
     }
@@ -179,6 +180,7 @@ public final class Bigataosha extends JavaPlugin {
         Objects.requireNonNull(Bukkit.getPluginCommand("setConfig")).setExecutor(new com.abuke.bigataosha.com.com_setConfig());
         Objects.requireNonNull(Bukkit.getPluginCommand("cd")).setExecutor(new com.abuke.bigataosha.com.com_cd());
         Objects.requireNonNull(Bukkit.getPluginCommand("setCalled")).setExecutor(new com.abuke.bigataosha.com.com_setCalled());
+        Objects.requireNonNull(Bukkit.getPluginCommand("startgameauto")).setExecutor(new com.abuke.bigataosha.com.com_startgameauto());
         //称号
         VIPs_String = pluginMain.getConfig().getStringList("CalledVIP");
         VIPPROs_String = pluginMain.getConfig().getStringList("CalledVIPPRO");

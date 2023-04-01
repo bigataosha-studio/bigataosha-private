@@ -63,6 +63,34 @@ public class commands implements CommandExecutor {
         {
             System.out.println("开始游戏失败，人数不足");
             commandSender.sendMessage("§a开始游戏失败，人数不足");
+            if(startgameauto){
+                //创建一个BossBar，用于显示人数的百分比
+                BossBar bossBar = Bukkit.createBossBar("§b开始游戏", BarColor.GREEN, BarStyle.SOLID);
+                bossBar.setProgress(8.0 / Bukkit.getOnlinePlayers().size());
+                //新建一个线程，用于更新BossBar的进度
+                Thread thread = new Thread(() -> {
+                    while (Bukkit.getOnlinePlayers().size() < 8) {
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        bossBar.setProgress(8.0 / Bukkit.getOnlinePlayers().size());
+                    }
+                    //当人数达到要求时，执行指令
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "startgame");
+                    //销毁BossBar
+                    bossBar.removeAll();
+                    //结束线程
+                    Thread.currentThread().interrupt();
+                });
+                thread.start();
+                //将BossBar添加给所有玩家
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    bossBar.addPlayer(player);
+                }
+                return true;
+            }
             return false;
         }
         else if(ifGameStart)

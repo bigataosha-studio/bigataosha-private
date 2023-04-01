@@ -57,18 +57,17 @@ public class MyListener implements Listener {
         speciallTeam.addEntry(player.getName());
         //把玩家转变为观察者
         player.setGameMode(org.bukkit.GameMode.SPECTATOR);
-        if (team.getSize() == 1) {
-            for (OfflinePlayer p : Bukkit.getOfflinePlayers()) {
-                if (p.isOnline()) {
-                    p.getPlayer().sendMessage("§c" + team.getDisplayName() + "§c队伍已经被击败");
-                    if (team.getName().equals("红队")) {
-                        EndGame("", String_Name_Runner);
-                    } else if(team.getName().equals("蓝队")) {
-                        EndGame("", String_Name_Catcher);
-                    }
-                }
+        if (team.getSize() == 0) {
+            if (team.getName().equals("红队")) {
+                EndGame("", String_Name_Runner);
+            } else if(team.getName().equals("蓝队")) {
+                EndGame("", String_Name_Catcher);
+            }
+            else{
+                return;
             }
         }
+
     }
     @EventHandler
     public void onPlayerItemConsume(PlayerItemConsumeEvent event) {
