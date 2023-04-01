@@ -353,8 +353,10 @@ public final class Bigataosha extends JavaPlugin {
             TPS.addEntry("§a服务器TPS：");
             TPS.setSuffix(format0p2(server.getTPS()[0]));
             TPs.setScore(-3);
+            Score line4 = objective.getScore("输入/cd打开菜单");
+            line4.setScore(-4);
             Score line5 = objective.getScore("§4" + String_Message_Default_haveagoodtime);
-            line5.setScore(-4);
+            line5.setScore(-5);
             objective.setDisplaySlot(DisplaySlot.SIDEBAR);
             //System.out.println(String_Message_Default_to + player.getName() + String_Message_ScoreBoard_SendBoardSuccessfully);
             // 将计分板推送给玩家
