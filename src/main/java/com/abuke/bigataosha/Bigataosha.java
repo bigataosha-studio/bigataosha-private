@@ -419,21 +419,21 @@ public final class Bigataosha extends JavaPlugin {
         VIP.setPrefix(String_Called_VIP);
         VIPPRO.setPrefix(String_Called_VIPPRO);
         VIPULTRA.setPrefix(String_Called_VIPULTRA);
-//        for(Player obj : VIPs){
-//            VIP.addEntry(obj.getName());
-//        }
-//        for(Player obj : VIPPROs){
-//            VIPPRO.addEntry(obj.getName());
-//        }
-//        for(Player obj : VIPULTRAs){
-//            VIPULTRA.addEntry(obj.getName());
-//        }
-//        for(Player obj : OPs){
-//            OP.addEntry(obj.getName());
-//        }
-//        for(Player obj : PLUGINMAKERs){
-//            PLUGINMAKER.addEntry(obj.getName());
-//        }
+        for(Player obj : VIPs){
+            VIP.addEntry(obj.getName());
+        }
+        for(Player obj : VIPPROs){
+            VIPPRO.addEntry(obj.getName());
+        }
+        for(Player obj : VIPULTRAs){
+            VIPULTRA.addEntry(obj.getName());
+        }
+        for(Player obj : OPs){
+            OP.addEntry(obj.getName());
+        }
+        for(Player obj : PLUGINMAKERs){
+            PLUGINMAKER.addEntry(obj.getName());
+        }
         teleportPlayers(World_Spawn_x,World_Spawn_y,World_Spawn_z,"正在把你传送到世界出生点", null);
     }
 
