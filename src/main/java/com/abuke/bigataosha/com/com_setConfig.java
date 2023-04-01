@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import static com.abuke.bigataosha.Bigataosha.LastMinute;
+import static com.abuke.bigataosha.Bigataosha.ifDebugger;
 
 public class com_setConfig implements @Nullable CommandExecutor {
     @Override
@@ -18,7 +19,12 @@ public class com_setConfig implements @Nullable CommandExecutor {
         else {
             if(strings[0].equals("LastMinute") && strings[1].length() > 0){
                 LastMinute = Integer.parseInt(strings[1]);
-                commandSender.sendMessage("§a成功的把LastName设置为" + Integer.parseInt(strings[1]));
+                commandSender.sendMessage("§a成功的把LastMinute设置为" + Integer.parseInt(strings[1]));
+                return true;
+            }
+            else if(strings[0].equals("ifDebugger") && strings[1].length() > 0){
+                ifDebugger = Boolean.parseBoolean(strings[1]);
+                commandSender.sendMessage("§a成功的把ifDebugger设置为" + Boolean.parseBoolean(strings[1]));
                 return true;
             }
             else{

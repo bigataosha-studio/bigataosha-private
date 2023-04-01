@@ -67,24 +67,16 @@ public class commands implements CommandExecutor {
                 //创建一个BossBar，用于显示人数的百分比
                 BossBar bossBar = Bukkit.createBossBar("§b开始游戏", BarColor.GREEN, BarStyle.SOLID);
                 bossBar.setProgress(8.0 / Bukkit.getOnlinePlayers().size());
-                //新建一个线程，用于更新BossBar的进度
-                Thread thread = new Thread(() -> {
-                    while (Bukkit.getOnlinePlayers().size() < 8) {
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        bossBar.setProgress(8.0 / Bukkit.getOnlinePlayers().size());
+                //新建一个自动运行事件，用于更新BossBar的进度
+                Bukkit.getScheduler().runTaskTimer(pluginMain, () -> {
+                    bossBar.setProgress(8.0 / Bukkit.getOnlinePlayers().size());
+                    if(Bukkit.getOnlinePlayers().size() >= 8)
+                    {
+                        bossBar.removeAll();
                     }
-                    //当人数达到要求时，执行指令
-                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "startgame");
-                    //销毁BossBar
-                    bossBar.removeAll();
-                    //结束线程
-                    Thread.currentThread().interrupt();
-                });
-                thread.start();
+                }, 0, 20);
+
+
                 //将BossBar添加给所有玩家
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     bossBar.addPlayer(player);
