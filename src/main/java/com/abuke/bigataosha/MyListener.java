@@ -47,6 +47,9 @@ public class MyListener implements Listener {
     //当玩家死亡时，检测死亡的玩家的队伍，如果当前队伍没有玩家了，那么结束游戏，如果是，那么给在服务器中的所有玩家发送死亡消息
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
+        if(!ifGameStart){
+            return;
+        }
         Player player = event.getEntity();
         //把玩家移出队伍
         Team team = scoreboard.getEntryTeam(player.getName());
