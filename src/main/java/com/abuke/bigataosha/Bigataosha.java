@@ -131,13 +131,13 @@ public final class Bigataosha extends JavaPlugin {
     public static int Teacher_Spawn_y = 0;
     public static int Teacher_Spawn_z = 0;
     //创建两个List，用于记录从Config中来的玩家名字和分数
-    List<String> PlayerNames = null;
-    List<Integer> PlayerScores = null;
-    public static List<String> VIPs_String = null;
-    public static List<String> VIPPROs_String = null;
-    public static List<String> VIPULTRAs_String = null;
-    public static List<String> OPs_String = null;
-    public static List<String> PLUGINMAKERs_String = null;
+    List<String> PlayerNames = new ArrayList<>();
+    List<Integer> PlayerScores = new ArrayList<>();
+    public static List<String> VIPs_String = new ArrayList<>();
+    public static List<String> VIPPROs_String = new ArrayList<>();
+    public static List<String> VIPULTRAs_String = new ArrayList<>();
+    public static List<String> OPs_String = new ArrayList<>();
+    public static List<String> PLUGINMAKERs_String = new ArrayList<>();
     //游戏区域
     public static int GameArea_x1 = 0;
     public static int GameArea_z1 = 0;
@@ -180,30 +180,30 @@ public final class Bigataosha extends JavaPlugin {
         Objects.requireNonNull(Bukkit.getPluginCommand("cd")).setExecutor(new com.abuke.bigataosha.com.com_cd());
         Objects.requireNonNull(Bukkit.getPluginCommand("setCalled")).setExecutor(new com.abuke.bigataosha.com.com_setCalled());
         //称号
-//        VIPs_String = pluginMain.getConfig().getStringList("CalledVIP");
-//        VIPPROs_String = pluginMain.getConfig().getStringList("CalledVIPPRO");
-//        VIPULTRAs_String = pluginMain.getConfig().getStringList("CalledVIPULTRA");
-//        OPs_String = pluginMain.getConfig().getStringList("CalledOP");
-//        PLUGINMAKERs_String = pluginMain.getConfig().getStringList("CalledPLUGINMAKER");
-//        for(String obj : VIPs_String){
-//            VIPs.add(Bukkit.getPlayer(obj));
-//        }
-//        for(String obj : VIPPROs_String)
-//        {
-//            VIPPROs.add(Bukkit.getPlayer(obj));
-//        }
-//        for(String obj : VIPULTRAs_String)
-//        {
-//            VIPULTRAs.add(Bukkit.getPlayer(obj));
-//        }
-//        for(String obj : OPs_String)
-//        {
-//            OPs.add(Bukkit.getPlayer(obj));
-//        }
-//        for(String obj : PLUGINMAKERs_String)
-//        {
-//            PLUGINMAKERs.add(Bukkit.getPlayer(obj));
-//        }
+        VIPs_String = pluginMain.getConfig().getStringList("CalledVIP");
+        VIPPROs_String = pluginMain.getConfig().getStringList("CalledVIPPRO");
+        VIPULTRAs_String = pluginMain.getConfig().getStringList("CalledVIPULTRA");
+        OPs_String = pluginMain.getConfig().getStringList("CalledOP");
+        PLUGINMAKERs_String = pluginMain.getConfig().getStringList("CalledPLUGINMAKER");
+        for(String obj : VIPs_String){
+            VIPs.add(Bukkit.getPlayer(obj));
+        }
+        for(String obj : VIPPROs_String)
+        {
+            VIPPROs.add(Bukkit.getPlayer(obj));
+        }
+        for(String obj : VIPULTRAs_String)
+        {
+            VIPULTRAs.add(Bukkit.getPlayer(obj));
+        }
+        for(String obj : OPs_String)
+        {
+            OPs.add(Bukkit.getPlayer(obj));
+        }
+        for(String obj : PLUGINMAKERs_String)
+        {
+            PLUGINMAKERs.add(Bukkit.getPlayer(obj));
+        }
         //绑定监听器
         Bukkit.getPluginManager().registerEvents(new com.abuke.bigataosha.MyListener(), this);
         //计分板
@@ -265,21 +265,21 @@ public final class Bigataosha extends JavaPlugin {
         Objects.requireNonNull(server.getWorld("world")).setGameRule(GameRule.SPECTATORS_GENERATE_CHUNKS, true);
         Objects.requireNonNull(server.getWorld("world")).setGameRule(GameRule.DISABLE_ELYTRA_MOVEMENT_CHECK, true);
         //玩家称号
-//        for(Player obj : VIPs){
-//            VIP.addEntry(obj.getName());
-//        }
-//        for(Player obj : VIPPROs){
-//            VIPPRO.addEntry(obj.getName());
-//        }
-//        for(Player obj : VIPULTRAs){
-//            VIPULTRA.addEntry(obj.getName());
-//        }
-//        for(Player obj : OPs){
-//            OP.addEntry(obj.getName());
-//        }
-//        for(Player obj : PLUGINMAKERs){
-//            PLUGINMAKER.addEntry(obj.getName());
-//        }
+        for(Player obj : VIPs){
+            VIP.addEntry(obj.getName());
+        }
+        for(Player obj : VIPPROs){
+            VIPPRO.addEntry(obj.getName());
+        }
+        for(Player obj : VIPULTRAs){
+            VIPULTRA.addEntry(obj.getName());
+        }
+        for(Player obj : OPs){
+            OP.addEntry(obj.getName());
+        }
+        for(Player obj : PLUGINMAKERs){
+            PLUGINMAKER.addEntry(obj.getName());
+        }
     }
     @Override
     public void onEnable() {
